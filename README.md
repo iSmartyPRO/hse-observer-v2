@@ -82,7 +82,7 @@ Source: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_re
 ```
 200 - Success
 201 - Created
-404 - Not Found
+204 - No Content
 400 - Bad request
 401 - Unauthorized
 403 - Forbidden
@@ -93,8 +93,8 @@ Source: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_re
 
 # Задачи
 - [x] пользователь admin, должен иметь все Роли, чтобы были доступны все опции;
-- [ ] [установить иконки для Действий во Front-End, на данный момент они повторяются - подобрать](https://github.com/iSmartyPRO/hse-observer-v2/issues/1)
-- [ ] при открытии опции Наблюдения и если данные отсутствуют, то появляется всплывающее окно Backend error Not found, DataNotFound - это не правильно, всплывающего окна с ошибкой не должно быть.
+- [x] [установить иконки для Действий во Front-End, на данный момент они повторяются - подобрать](https://github.com/iSmartyPRO/hse-observer-v2/issues/1)
+- [x] при открытии опции Наблюдения и если данные отсутствуют, то появляется всплывающее окно Backend error Not found, DataNotFound - это не правильно, всплывающего окна с ошибкой не должно быть.
 - [ ] Генератор пользователей - генерация 5-6 тестовых пользователей, при помощи которых можно выполнять тесты;
 - [ ] функционал Наблюдения;
 - [ ] уведомление на почту;

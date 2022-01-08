@@ -16,12 +16,11 @@ module.exports.getAll = (req, res, next) => {
         if(data.length > 0){
           res.status(200).json({message: req.t('getAllData'), data})
         } else {
-          res.status(404).json({message: req.t('dataNotFound')})
+          res.status(204).json({message: req.t('error.dataNotFound')})
         }
       })
       .catch(err => console.log(err))
   } catch(error) {
-    console.log(error)
     res.status(500).json({message: req.t('error.catchBlock'), error})
   }
 }

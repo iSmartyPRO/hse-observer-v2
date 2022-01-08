@@ -79,7 +79,7 @@
             :to="{ name: 'Observes' }"
             :class="this.$route.meta.menu === 'Observes' ? 'active-menu' : ''"
             ><span
-              data-uk-icon="icon: comments"
+              data-uk-icon="icon: camera"
               class="uk-margin-small-right"
             ></span
             >{{ $t("menu.observes") }}</router-link
@@ -90,7 +90,7 @@
             :to="{ name: 'Branches' }"
             :class="this.$route.meta.menu === 'Branches' ? 'active-menu' : ''"
             ><span
-              data-uk-icon="icon: users"
+              data-uk-icon="icon: location"
               class="uk-margin-small-right"
               class-active="active"
             ></span
@@ -104,7 +104,7 @@
               this.$route.meta.menu === 'Departments' ? 'active-menu' : ''
             "
             ><span
-              data-uk-icon="icon: users"
+              data-uk-icon="icon: social"
               class="uk-margin-small-right"
             ></span
             >{{ $t("menu.departments") }}</router-link
@@ -115,7 +115,7 @@
             :to="{ name: 'Roles' }"
             :class="this.$route.meta.menu === 'Roles' ? 'active-menu' : ''"
             ><span
-              data-uk-icon="icon: users"
+              data-uk-icon="icon: unlock"
               class="uk-margin-small-right"
             ></span
             >{{ $t("menu.roles") }}</router-link
@@ -185,10 +185,10 @@ import i18n from "../../i18n";
 import { useToast } from "vue-toastification";
 import { computed, ref } from "@vue/reactivity";
 import router from "../../router";
-import { onMounted } from '@vue/runtime-core';
+import { onMounted } from "@vue/runtime-core";
 export default {
   setup() {
-    const {t} = i18n.global
+    const { t } = i18n.global;
     const toast = useToast();
     const roles = VueJwtDecode.decode(
       authService.currentUserValue.token
@@ -267,9 +267,7 @@ export default {
         )
         .then((request) => {
           if (request.status === 200) {
-            toast.success(
-              t("languageSwitchNotification", { languageName })
-            );
+            toast.success(t("languageSwitchNotification", { languageName }));
             let ls = JSON.parse(localStorage.getItem("currentUser"));
             ls.language = language;
             localStorage.setItem("currentUser", JSON.stringify(ls));
@@ -279,10 +277,10 @@ export default {
           }
         })
         .catch((err) => handleError(err));
-    }
+    };
     const logout = () => {
       this.$router.push("/logout");
-    }
+    };
     return {
       toast,
       roles,
@@ -294,14 +292,14 @@ export default {
       showRoles,
       showUsers,
       changeLanguage,
-      logout
+      logout,
     };
   },
   data() {
     return {
-      languages
-    }
-  }
+      languages,
+    };
+  },
 };
 </script>
 
