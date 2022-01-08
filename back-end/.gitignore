@@ -1,0 +1,10 @@
+node_modules
+config/index.js
+front-dev/node_modules
+front-dev/config/production.json
+seeders/data/users.json
+uploads/*
+
+
+
+!**/.gitkeep

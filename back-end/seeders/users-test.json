@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Observer User",
+    "username": "observer",
+    "password": "observer",
+    "email": "observer@ismarty.pro",
+    "position": "Developer - Observer",
+    "authType": "local",
+    "language": "ru",
+    "role": "observer"
+  },
+  {
+    "name": "Standard User",
+    "username": "observer",
+    "password": "observer",
+    "email": "observer@ismarty.pro",
+    "position": "Developer - Observer",
+    "authType": "local",
+    "language": "ru",
+    "role": "observer"
+  }
+]

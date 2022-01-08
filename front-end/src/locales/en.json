@@ -1,0 +1,81 @@
+{
+  "appTitle": "Observer System",
+  "welcome": "Welcome to observable system!!!",
+  "observes": "Observes",
+  "actions": "Actions",
+  "shortStat": "Short Stat",
+  "add": "Add",
+  "search": "Search",
+  "updateData": "Update Data",
+  "updatedFor":"Data for %{name} successfully updated!",
+  "back": "Back",
+  "areYouSureDelete": "Are you sure to delete <strong>%{name}</strong> ?",
+  "languageSwitchNotification": "Language changed to %{languageName}",
+  "language": "Language",
+  "position": "Position",
+  "email": "E-mail",
+  "enterPosition": "Enter position name",
+  "password": "Password",
+  "enterPassword": "Enter password",
+  "authType": "Authorization Type",
+  "local": "Local",
+  "ad": "Active Directory",
+  "loadingData": "Loading Data...",
+  "menu": {
+    "dashboard": "Dashboard",
+    "branches": "Branches",
+    "observes": "Observes",
+    "departments": "Departments",
+    "roles": "Roles",
+    "users": "Users"
+  },
+  "department": {
+    "singular": "Department",
+    "new": "New Department",
+    "create": "Create Department",
+    "name": "Department Name",
+    "enterName": "Enter department name",
+    "edit": "Edit Department"
+  },
+  "branch": {
+    "singular": "Branch",
+    "new": "New Branch",
+    "create": "Create Branch",
+    "name": "Branch Name",
+    "enterName": "Enter branch name",
+    "edit": "Edit branch",
+    "location": "Branch location",
+    "enterAddress": "Enter address"
+  },
+  "role": {
+    "singular": "Role",
+    "new": "New Role",
+    "create": "Create Role",
+    "created": "New role %{name} created!",
+    "name": "Role name",
+    "enterName": "Enter role name",
+    "edit": "Edit role",
+    "description": "Role description",
+    "describe": "Describe this role",
+    "deleted": "Role %{name} deleted!"
+  },
+  "user": {
+    "singular": "User",
+    "new": "New User",
+    "create": "Create User",
+    "created": "New user %{name} create!",
+    "edit": "Edit user",
+    "deleted": "User %{name} deleted!",
+    "lfName": "Name",
+    "enterlfName": "Enter Name",
+    "avatarUpdate": "Click here for update user avatar"
+  },
+  "avatar": {
+    "userAvatar": "User avatar",
+    "choosePhoto": "Select photo for avatar",
+    "makeChoice": "Make choice user avatar",
+    "ok": "Ok",
+    "cancel": "Cancel"
+  }
+
+}

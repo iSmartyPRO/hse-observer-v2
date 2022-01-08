@@ -1,0 +1,39 @@
+{
+  "name": "hse-observer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "activedirectory2": "^2.1.0",
+    "bcrypt": "^5.0.1",
+    "cronstrue": "^1.122.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "glob-parent": "5.1.2",
+    "i18n": "^0.13.3",
+    "ismartypro-utils": "^1.0.15",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^6.0.13",
+    "mongoose-data-seed": "^2.1.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "node-cron": "^3.0.0",
+    "set-value": "4.0.1"
+  },
+  "mdSeed": {
+    "seedersFolder": "./seeders",
+    "customSeederTemplate": "./md-seed-template.ejs"
+  }
+}

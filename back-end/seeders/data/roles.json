@@ -1,0 +1,17 @@
+[
+    {
+        "name": "admin",
+        "displayName": "Администратор",
+        "description": "супер пользователь системы"
+    },
+    {
+        "name": "observer",
+        "displayName": "Наблюдатель",
+        "description": "пользователь наблюдающий за происшествиями"
+    },
+    {
+        "name": "standard",
+        "displayName": "Стандартный",
+        "description": "Пользователь со стандртными правами"
+    }
+]
