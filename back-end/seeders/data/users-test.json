@@ -1,12 +1,74 @@
 [
   {
-    "name": "Observer User",
-    "username": "observer",
-    "password": "observer",
-    "email": "observer@ismarty.pro",
-    "position": "Developer - Observer",
+    "name": "Observer1 User",
+    "username": "observer1",
+    "password": "observer1",
+    "email": "observer1@ismarty.pro",
+    "position": "Developer - Observer1",
     "authType": "local",
     "language": "ru",
-    "role": "observer"
+    "department": "Охрана труда",
+    "branches": ["Волхов"],
+    "roles": ["observer"]
+  },
+  {
+    "name": "Observer2 User",
+    "username": "observer2",
+    "password": "observer2",
+    "email": "observer2@ismarty.pro",
+    "position": "Developer - Observer2",
+    "authType": "local",
+    "language": "ru",
+    "department": "Технический офис",
+    "branches": ["Кировск"],
+    "roles": ["observer"]
+  },
+  {
+    "name": "Observer3 User",
+    "username": "observer3",
+    "password": "observer3",
+    "email": "observer3@ismarty.pro",
+    "position": "Developer - Observer3",
+    "authType": "local",
+    "language": "ru",
+    "department": "Отдел кадров и администрации",
+    "branches": ["Центарльный офис"],
+    "roles": ["observer"]
+  },
+  {
+    "name": "Observer4 User",
+    "username": "observer4",
+    "password": "observer4",
+    "email": "observer4@ismarty.pro",
+    "position": "Developer - Observer4",
+    "authType": "local",
+    "language": "ru",
+    "department": "Охрана труда",
+    "branches": ["Волхов"],
+    "roles": ["observer"]
+  },
+  {
+    "name": "Observer5 User",
+    "username": "observer5",
+    "password": "observer5",
+    "email": "observer5@ismarty.pro",
+    "position": "Developer - Observer5",
+    "authType": "local",
+    "language": "ru",
+    "department": "Технический офис",
+    "branches": ["Кировск"],
+    "roles": ["observer"]
+  },
+  {
+    "name": "Observer6 User",
+    "username": "observer6",
+    "password": "observer6",
+    "email": "observer6@ismarty.pro",
+    "position": "Developer - Observer6",
+    "authType": "local",
+    "language": "ru",
+    "department": "Отдел кадров и администрации",
+    "branches": ["Центральный офис"],
+    "roles": ["observer"]
   }
 ]
