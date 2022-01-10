@@ -109,3 +109,7 @@ Source: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_re
 
 ## Разноцветный console.log
 Source: https://stackoverflow.com/questions/9781218/how-to-change-node-jss-console-font-color
+
+
+## Выявленные проблемы
+Ранее была выявлена проблема с запуском проекта VueJS - при запуске ругался на openssl - для решения подобной проблемы надо использовать NodeJS LTS вместо current, соответственно на данный момент рекомендуется использовать NodeJS 16.3
