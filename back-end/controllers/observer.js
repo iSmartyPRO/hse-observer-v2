@@ -13,31 +13,31 @@ module.exports.getAll = (req, res, next) => {
       .select("_id userObserver departmentObserver branchObserver dateTime isRisk departmentObservable")
       .exec()
       .then((data) => {
-        if(data.length > 0){
-          res.status(200).json({message: req.t('getAllData'), data})
+        if (data.length > 0) {
+          res.status(200).json({ message: req.t('getAllData'), data })
         } else {
-          res.status(204).json({message: req.t('error.dataNotFound')})
+          res.status(204).json({ message: req.t('error.dataNotFound') })
         }
       })
       .catch(err => console.log(err))
-  } catch(error) {
-    res.status(500).json({message: req.t('error.catchBlock'), error})
+  } catch (error) {
+    res.status(500).json({ message: req.t('error.catchBlock'), error })
   }
 }
 
 module.exports.get = (req, res, next) => {
-  let {id} = req.params
-  try{
+  let { id } = req.params
+  try {
     Model.findById(id)
       //.select("_id name email branch department position")
       .exec()
       .then((data) => {
-        res.status(200).json({message: req.t('getDataById', {id}), data})
+        res.status(200).json({ message: req.t('getDataById', { id }), data })
       })
       .catch(err => console.log(err))
-  } catch(error){
+  } catch (error) {
     console.log(error)
-    res.status(500).json({message: req.t('error.catchBlock'), error})
+    res.status(500).json({ message: req.t('error.catchBlock'), error })
   }
 }
 
@@ -45,31 +45,14 @@ module.exports.get = (req, res, next) => {
 
 module.exports.save = async (req, res, next) => {
   let { body, files } = req
-  let d = {}
-  // переназначение строковых параметров false и true в boolean
-  for(item in body){
-    if(body[item].toLowerCase() === 'false'){
-       d[item] = false
-    } else if(body[item].toLowerCase() === 'true'){
-      d[item] = true
-    } else {
-      d[item] = body[item]
-    }
-  }
-
-  if(files.length){
-    // если имеется фотографии то объединить с информацию о фотографии в общий запрос
-    Object.assign(d, {photos: files})
-  }
-  console.log(d)
   // Проверяем обязательные условия
   // проверяем обязательные входные данные
-  if(d.branchObserver && d.departmentObservable && d.userObservable) {
+  if (body.branchObserver && body.departmentObservable && body.userObservable) {
     // если входной параметр isRisk равен true, тогда добавить проверку дополнительных обязательных параметров
-    if(d.isRisk) {
+    if (body.isRisk) {
       // проверка обязательных входных праметров
-      if(!d.userObservable || !d.departmentController || !d.userController || !d.descriptionController){
-        return res.status(422).json({message: "Your record type is risked, there should be other required params included into request"})
+      if (!body.userObservable || !body.departmentController || !body.userController || !body.descriptionController) {
+        return res.status(422).json({ message: "Your record type is risked, there should be other required params included into request" })
       }
     }
 
@@ -84,66 +67,62 @@ module.exports.save = async (req, res, next) => {
       await new Model(observedData)
         .save()
         .then(data => {
-          res.status(201).json({message: req.t('dataSaved'), data})
+          res.status(201).json({ message: req.t('dataSaved'), data })
         })
         .catch(err => {
           console.log(err)
-          res.status(500).json({message: req.t('error.catchBlock'), error: err.message})
+          res.status(500).json({ message: req.t('error.catchBlock'), error: err.message })
         })
-      }
+    }
     catch (err) {
       console.log(err)
-      res.status(500).json({message: req.t('error.catchBlock'), error: err})
+      res.status(500).json({ message: req.t('error.catchBlock'), error: err })
     }
   } else {
-    res.status(422).json({message: req.t('error.missingRequredParams')})
+    res.status(422).json({ message: req.t('error.missingRequredParams') })
   }
 
 }
 module.exports.update = (req, res, next) => {
-  let {id} = req.params
-  let {body, files} = req
+  let { id } = req.params
+  let { body, files } = req
   body = JSON.parse(JSON.stringify(body))
-  if(body || files) {
+  if (body || files) {
     Model.findById(id, (err, d) => {
-      if(err) console.log(err)
-      if(files.length){
-        // если имеется фотографии то объединить с информацию о фотографии в общий запрос
-        let photos = d.photos.concat(files)
-        Object.assign(body, {photos})
-      }
+      if (err) console.log(err)
 
-      Model.findByIdAndUpdate(id, body, {new: true}, (err, data) => {
-        if(data){
+
+      Model.findByIdAndUpdate(id, body, { new: true }, (err, data) => {
+        if (data) {
           res.status(200).json({
-            message: req.t('updatedById', {id}),
+            message: req.t('updatedById', { id }),
             data
           })
         } else {
           res.status(404).json({
-            message: req.t('error.notFoundNotUpdated', {id}),
+            message: req.t('error.notFoundNotUpdated', { id }),
           })
         }
       })
     })
 
   } else {
-    res.status(500).json({message: req.t('error.missingDataInRequestBodyFiles')})
+    res.status(500).json({ message: req.t('error.missingDataInRequestBodyFiles') })
   }
 }
 
 module.exports.delete = (req, res, next) => {
-  let {id} = req.params
+  let { id } = req.params
   Model.findByIdAndDelete(id, (err, data) => {
-    if(err) console.log(err)
-    if(data){
+    if (err) console.log(err)
+    if (data) {
       res.status(200).json({
         message: req.t('deletedById', { id }),
         data
       })
     } else {
       res.status(404).json({
-        message: req.t('error.dataNotFoundById', {id}),
+        message: req.t('error.dataNotFoundById', { id }),
       })
     }
   })
@@ -154,30 +133,30 @@ module.exports.delete = (req, res, next) => {
 // Observer photos
 // этот модуль возможно уже не нужен, потому что мы используем данные в JSON
 module.exports.deletePhoto = (req, res, next) => {
-  let {id, filename} = req.params
+  let { id, filename } = req.params
   Model.findById(id, (err, d) => {
-    if(err) console.log(err)
-    if(d) {
+    if (err) console.log(err)
+    if (d) {
       let deletedPhoto = d.photos.filter(photo => {
         return photo.filename !== filename
       })
-      Model.findByIdAndUpdate(id, {photos: deletedPhoto},{new: true},(err, data) => {
-        if(err) console.log(err)
+      Model.findByIdAndUpdate(id, { photos: deletedPhoto }, { new: true }, (err, data) => {
+        if (err) console.log(err)
         unlinkAsync(`uploads/${filename}`)
-        res.status(200).json({message: `Photo for observer id ${id}, filename: ${filename} is deleted`, data})
+        res.status(200).json({ message: `Photo for observer id ${id}, filename: ${filename} is deleted`, data })
       })
     } else {
-      res.status(404).json({message: `Not found`})
+      res.status(404).json({ message: `Not found` })
     }
   })
 }
 
 module.exports.getAllPhotos = (req, res, next) => {
-  Model.find({photos: {$ne: []}})
+  Model.find({ photos: { $ne: [] } })
     .select('id photos')
     .exec()
     .then(data => {
       res.json(data)
-      })
+    })
     .catch(err => console.log(err))
 }
